@@ -1,10 +1,17 @@
-  Better way to install NONA is usage of top COCOM configure &
-Makefile (see file INSTALL in the top COCOM directory).
+  If you don't have SPRUT installed, you may need to
 
-  In any case you need to run configure in the top COCOM directory (in
-order to create Makefile for NONA), to build AMMUNITION and SPRUT
-(because NONA uses them for its building).  After that we can work
-with only NONA (building, installation, and so on).  The NONA Makefile
+touch ird.c ird.h
+
+so the build system doesn't try to regenerate them.
+
+  Run
+
+autoreconf -i
+./configure
+make
+
+
+The NONA Makefile
 has additional entries in comparison of the top COCOM Makefile.  These
 are:
 
