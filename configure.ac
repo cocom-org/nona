@@ -25,6 +25,9 @@ AC_TYPE_SIGNAL
 
 # Checks for library functions.
 AC_FUNC_ERROR_AT_LINE
+AC_FUNC_MALLOC
+AC_FUNC_REALLOC
+AC_CHECK_FUNCS([memmove memset strerror])
 
 AC_CONFIG_FILES([Makefile])
 

@@ -1,12 +1,16 @@
-# Cygwin can not find dll without changing PATH
-PATH := ${PATH}:../AMMUNITION/.libs
-
 bin_PROGRAMS = nona
-nona_SOURCES = common.h common.c tab.h tab.c yacc.h anal.h anal.c gen.h gen.c main.c
+nona_SOURCES = common.h common.c tab.h tab.c yacc.h anal.h anal.c gen.h gen.c main.c \
+  AMMUNITION/objstack.c \
+  AMMUNITION/hashtab.c \
+  AMMUNITION/allocate.c \
+  AMMUNITION/position.c \
+  AMMUNITION/errors.c \
+  AMMUNITION/vlobject.c \
+  AMMUNITION/commline.c
 nodist_nona_SOURCES = yacc.c ird.c ird.h
-CLEANFILES = yacc.c ird.c ird.h
-nona_CFLAGS = -I$(srcdir)/../AMMUNITION
-nona_LDFLAGS = -static ../AMMUNITION/libcocom.la
+CLEANFILES = yacc.c
+nona_CFLAGS = -I$(srcdir)/AMMUNITION
+nona_LDFLAGS = -static
 dist_man_MANS = nona.1
 dist_doc_DATA = nona.txt nona.info nona.html nona-1.html nona-2.html nona-3.html nona-4.html nona-5.html\
    	        nona.pdf nona.dvi nona.ps
