@@ -1,5 +1,6 @@
 bin_PROGRAMS = nona
 nona_SOURCES = common.h common.c tab.h tab.c yacc.h anal.h anal.c gen.h gen.c main.c \
+  ird.c ird.h \
   AMMUNITION/objstack.c \
   AMMUNITION/hashtab.c \
   AMMUNITION/allocate.c \
@@ -7,7 +8,7 @@ nona_SOURCES = common.h common.c tab.h tab.c yacc.h anal.h anal.c gen.h gen.c ma
   AMMUNITION/errors.c \
   AMMUNITION/vlobject.c \
   AMMUNITION/commline.c
-nodist_nona_SOURCES = yacc.c ird.c ird.h
+nodist_nona_SOURCES = yacc.c
 CLEANFILES = yacc.c
 nona_CFLAGS = -I$(srcdir)/AMMUNITION
 nona_LDFLAGS = -static
